@@ -6,11 +6,16 @@ export default async function FramesSection() {
 
   return (
     <section id="frames">
-      <div className="section-head">
-        <h2>Frames</h2>
-        <p>Unexpected moments captured through the lens. Click any photo to preview or download it.</p>
+      <div id="frames-div">
+        <div className="section-head">
+          <h2>Frames</h2>
+          <p>
+            Unexpected moments captured through the lens. Click any photo to
+            preview or download it.
+          </p>
+        </div>
+        <FramesGallery photographs={photographs} />
       </div>
-      <FramesGallery photographs={photographs} />
     </section>
   );
 }

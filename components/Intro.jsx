@@ -9,11 +9,14 @@ export default function Intro() {
         <p className="hero-fade-in d4">and photograph what catches my eye. </p>
       </div>
       <div id="intro-image">
-        <img src="/pf.png" alt="Portrait of Jay" width={420} height={520} />
+        <img
+          src="/pf.png"
+          alt="Portrait of Jay"
+          width={420}
+          height={520}
+          draggable="false"
+        />
       </div>
-      <a className="intro-scroll-cue hero-fade-in d3" href="#hobbies">
-        <span className="line" /> Scroll to explore
-      </a>
     </section>
   );
 }

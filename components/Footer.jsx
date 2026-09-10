@@ -5,8 +5,8 @@ export default function Footer() {
     <footer>
       <h2>Get in touch</h2>
       <div className="row">
-        <a className="mail" href={buildMailtoHref("jaykee1995a@gmail.com")}>
-          jaykee1995a@gmail.com
+        <a className="mail" href={buildMailtoHref("priyanshidwivedi436@gmail.com")}>
+          priyanshidwivedi436@gmail.com
         </a>
         <div className="socials">
           <a href="https://www.instagram.com/snapwritoo?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer">Instagram</a>
