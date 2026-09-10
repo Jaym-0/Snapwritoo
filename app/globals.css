@@ -118,12 +118,7 @@ nav .links a:hover {
   gap: clamp(32px, 6vw, 80px);
   flex-wrap: wrap;
   padding-top: clamp(96px, 12vh, 140px);
-  background: radial-gradient(
-    120% 90% at 70% 20%,
-    #24301f 0%,
-    #171712 55%,
-    #100f0d 100%
-  );
+  background: radial-gradient(120% 90% at 70% 20%, #332236 0%, #171712 55%, #100f0d 100%);
 }
 #intro-content {
   max-width: 520px;
