@@ -176,7 +176,7 @@ nav .links a:hover {
   font-style: italic;
   font-size: clamp(2.2rem, 6vw, 4.6rem);
   color: var(--chalk);
-  white-space: normal;
+  white-space: nowrap;
 }
 #intro-content h3 {
   margin-top: 14px;

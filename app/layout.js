@@ -2,7 +2,7 @@ import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
 
 export const metadata = {
-  title: "Snapwritoo — Poems, Pitch, Frames",
+  title: "Snapwritoo",
   description: "Snapwritoo — poet, opening batsman, and photographer.",
 };
 
