@@ -87,46 +87,28 @@ nav {
 nav .name {
   font-family: "Fraunces", serif;
   font-style: italic;
-  font-size: 2.15rem;
+  font-size: clamp(1.5rem, 3vw, 2.15rem);
   color: var(--chalk);
 }
 nav .links {
   display: flex;
   gap: clamp(16px, 3vw, 36px);
   font-size: 0.92rem;
+  flex-wrap: wrap;
+  justify-content: flex-end;
 }
 nav .links a {
   opacity: 0.75;
   transition: opacity 0.2s ease;
   margin-bottom: 2px;
-  font-size: 1rem;
+  font-size: clamp(0.85rem, 1.6vw, 1rem);
+  white-space: nowrap;
 }
 nav .links a:hover {
   opacity: 1;
   font-weight: 700;
 }
-/* ====== MOBILE-NAV ============ */
-@media (max-width: 768px) {
-  nav {
-    padding: 16px 20px;
-    flex-direction: column;
-    gap: 10px;
-    align-items: center;
-    height: 8vh;
-  }
 
-  nav .name {
-    font-size: 1.7rem;
-  }
-
-  nav .links {
-    opacity: 1;
-    gap: 14px;
-    font-size: 0.82rem;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-}
 /* ============ INTRO ============ */
 #intro-page {
   min-height: 100vh;
@@ -135,6 +117,7 @@ nav .links a:hover {
   justify-content: space-evenly;
   gap: clamp(32px, 6vw, 80px);
   flex-wrap: wrap;
+  padding-top: clamp(96px, 12vh, 140px);
   background: radial-gradient(
     120% 90% at 70% 20%,
     #24301f 0%,
@@ -144,6 +127,7 @@ nav .links a:hover {
 }
 #intro-content {
   max-width: 520px;
+  width: 100%;
 }
 
 /* Intro entrance animations */
@@ -190,21 +174,19 @@ nav .links a:hover {
 
 #intro-content h1 {
   font-style: italic;
-  font-size: clamp(2.6rem, 6vw, 4.6rem);
+  font-size: clamp(2.2rem, 6vw, 4.6rem);
   color: var(--chalk);
-  white-space: nowrap;
+  white-space: normal;
 }
 #intro-content h3 {
   margin-top: 14px;
   margin-bottom: 16px;
-  font-size: clamp(1.75rem, 1.4vw, 2rem);
+  font-size: clamp(1.2rem, 2.4vw, 2rem);
   color: var(--sand);
   line-height: 1.6;
   max-width: 46ch;
-  /* text-align: right; */
 }
 #intro-content p {
-  /* margin-top: 16px; */
   font-size: clamp(1rem, 1.4vw, 1.15rem);
   color: var(--sand);
   line-height: 1.6;
@@ -317,7 +299,8 @@ nav .links a:hover {
   opacity: 0.6;
 }
 .hobby-panel-canvas {
-  width: clamp(240px, 32vw, 420px);
+  width: clamp(220px, 32vw, 420px);
+  max-width: 90vw;
   aspect-ratio: 1 / 1;
   opacity: 0;
   transform: scale(0.85);
@@ -337,6 +320,8 @@ nav .links a:hover {
 
 .hobby-panel-text {
   max-width: 420px;
+  width: 100%;
+  padding: 0 4px;
   opacity: 0;
   transform: translateY(24px);
   transition:
@@ -354,14 +339,14 @@ nav .links a:hover {
 
 .hobby-panel-text h2 {
   font-style: italic;
-  font-size: clamp(1.9rem, 3.4vw, 2.8rem);
+  font-size: clamp(1.7rem, 3.4vw, 2.8rem);
   color: var(--chalk);
   margin-bottom: 16px;
 }
 .hobby-panel-text p {
   color: var(--sand);
   line-height: 1.65;
-  font-size: 1.02rem;
+  font-size: clamp(0.94rem, 1.6vw, 1.02rem);
   margin-bottom: 22px;
 }
 .hobby-panel-cta {
@@ -411,12 +396,11 @@ nav .links a:hover {
 }
 
 /* ============ POETRY ============ */
-/* ============ POETRY ============ */
 
 #poems {
   background: var(--paper);
   color: var(--ink);
-  margin-top: -10%;
+  margin-top: -9%;
 }
 
 .section-head {
@@ -514,26 +498,11 @@ nav .links a:hover {
   max-width: 32ch;
 }
 
-/* ============ MOBILE ============ */
-
-@media (max-width: 860px) {
-  .poem-grid {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
-
-  .poem-card {
-    transform: none !important;
-  }
-
-  .poem-card:hover {
-    transform: translateY(-4px) !important;
-  }
-}
 /* ============ CRICKET ============ */
 #pitch {
   background: var(--outfield);
   color: var(--chalk);
+  margin-top: -9%;
 }
 #pitch .section-head p {
   color: #c9d3bf;
@@ -555,7 +524,7 @@ nav .links a:hover {
 }
 .stat .num {
   font-family: "Fraunces", serif;
-  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-size: clamp(1.6rem, 3vw, 2.6rem);
   color: var(--chalk);
 }
 .stat .label {
@@ -589,7 +558,6 @@ nav .links a:hover {
   max-width: 60ch;
 }
 
-/* ============ PHOTOGRAPHY ============ */
 /* ============ PHOTOGRAPHY ============ */
 
 #frames {
@@ -683,14 +651,6 @@ nav .links a:hover {
   );
 }
 
-/* ============ MOBILE ============ */
-
-@media (max-width: 860px) {
-  .frame-grid {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
-}
 /* ============ FOOTER ============ */
 footer {
   background: var(--ink);
@@ -715,10 +675,12 @@ footer .mail {
   font-size: 1.05rem;
   border-bottom: 1px solid var(--sand);
   padding-bottom: 2px;
+  word-break: break-word;
 }
 footer .socials {
   display: flex;
   gap: 24px;
+  flex-wrap: wrap;
   font-size: 0.92rem;
   color: var(--sand);
 }
@@ -727,98 +689,6 @@ footer .fine {
   color: #6b6858;
 }
 
-@media (max-width: 860px) {
-  .poem-grid,
-  .frame-grid {
-    grid-template-columns: 1fr;
-  }
-  .poem-card {
-    transform: none !important;
-  }
-  .stat-row {
-    grid-template-columns: repeat(2, 1fr);
-    row-gap: 28px;
-  }
-  .ledger-item {
-    grid-template-columns: 1fr;
-    gap: 8px;
-  }
-  nav .links {
-    gap: 14px;
-    font-size: 0.82rem;
-  }
-  #intro-page {
-    flex-direction: column-reverse;
-    text-align: center;
-    padding-top: 120px;
-  }
-  #intro-content h1 {
-    white-space: normal;
-  }
-
-  #intro-image {
-    width: clamp(180px, 60vw, 260px);
-  }
-  .hobby-panel {
-    flex-direction: column;
-    text-align: center;
-    padding-top: 96px;
-  }
-  .hobby-panel-index {
-    position: static;
-    margin-bottom: 12px;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-  .hero-fade-in,
-  #intro-content h1,
-  #intro-content h3,
-  #intro-content p,
-  #intro-image,
-  .intro-scroll-cue {
-    animation: none;
-    opacity: 1;
-    transform: none;
-  }
-  .intro-scroll-cue .line::after {
-    animation: none;
-  }
-  .hobby-panel-canvas,
-  .hobby-panel-text {
-    transition: none;
-    opacity: 1;
-    transform: none;
-  }
-}
-
-/* MOBILE-NAV */
-@media (max-width: 860px) {
-  #pitch {
-    margin-top: -27%;
-  }
-  #frames {
-    margin-top: -27%;
-  }
-  #poems {
-    margin-top: -27%;
-  }
-}
-
-/* LAPTOP-NAVs */
-
-#pitch {
-  margin-top: -9%;
-}
-#frames {
-  margin-top: -9%;
-}
-#poems {
-  margin-top: -9%;
-}
 /* ============ ADMIN (not part of the public design — kept minimal) ============ */
 #admin-page {
   max-width: 720px;
@@ -861,6 +731,7 @@ footer .fine {
   padding: 10px 12px;
   font-family: inherit;
   font-size: 0.95rem;
+  width: 100%;
 }
 #admin-page .admin-section {
   margin-bottom: 48px;
@@ -905,6 +776,8 @@ footer .fine {
   padding: 8px 0;
   border-bottom: 1px solid rgba(239, 234, 217, 0.08);
   font-size: 0.92rem;
+  gap: 12px;
+  flex-wrap: wrap;
 }
 #admin-page .admin-list button {
   background: none;
@@ -949,6 +822,9 @@ footer .fine {
   gap: 20px;
   color: var(--chalk);
   font-size: 0.95rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
 }
 
 .lightbox-download {
@@ -1007,7 +883,163 @@ footer .fine {
   right: clamp(8px, 3vw, 32px);
 }
 
-@media (max-width: 640px) {
+/* ============================================================ */
+/* ===================  RESPONSIVE  BREAKPOINTS  =============== */
+/* ============================================================ */
+
+/* ---- Large tablet / small laptop (1024px and below) ---- */
+@media (max-width: 1024px) {
+  .poem-grid,
+  .frame-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .stat-row {
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 24px;
+  }
+  .ledger-item {
+    grid-template-columns: 160px 1fr;
+    gap: 20px;
+  }
+  #pitch,
+  #frames,
+  #poems {
+    margin-top: -6%;
+  }
+}
+
+/* ---- Tablet / large phone (860px and below) ---- */
+@media (max-width: 860px) {
+  nav {
+    padding: 16px 20px;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+  nav .name {
+    font-size: 1.7rem;
+  }
+  nav .links {
+    opacity: 1;
+    gap: 14px;
+    font-size: 0.82rem;
+    justify-content: center;
+  }
+
+  .poem-grid,
+  .frame-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .poem-card {
+    transform: none !important;
+  }
+  .poem-card:hover {
+    transform: translateY(-4px) !important;
+  }
+
+  .stat-row {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 28px;
+  }
+  .ledger-item {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  #intro-page {
+    flex-direction: column-reverse;
+    text-align: center;
+    padding-top: 120px;
+  }
+  #intro-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #intro-content h1 {
+    white-space: normal;
+  }
+  #intro-content h3,
+  #intro-content p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #intro-image {
+    width: clamp(180px, 60vw, 260px);
+  }
+
+  .hobby-panel {
+    flex-direction: column;
+    text-align: center;
+    padding-top: 96px;
+  }
+  .hobby-panel-index {
+    position: static;
+    margin-bottom: 12px;
+  }
+  .hobby-panel-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #pitch,
+  #frames,
+  #poems {
+    margin-top: -14%;
+  }
+
+  footer .row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* ---- Small phone (480px and below) ---- */
+@media (max-width: 480px) {
+  section {
+    padding: clamp(48px, 12vw, 80px) 18px;
+  }
+
+  nav .name {
+    font-size: 1.4rem;
+  }
+  nav .links {
+    gap: 10px;
+    font-size: 0.78rem;
+  }
+
+  #intro-content h1 {
+    font-size: clamp(2rem, 9vw, 2.6rem);
+  }
+  #intro-content h3 {
+    font-size: 1.05rem;
+  }
+  #intro-image {
+    width: 78vw;
+  }
+
+  .hobby-panel-canvas {
+    width: 70vw;
+  }
+  .hobby-panel-text h2 {
+    font-size: 1.6rem;
+  }
+
+  .stat-row {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    padding: 24px 0;
+  }
+  .stat .num {
+    font-size: 1.5rem;
+  }
+
+  .poem-card {
+    padding: 24px 20px;
+  }
+
   .lightbox-nav {
     width: 40px;
     height: 40px;
@@ -1017,5 +1049,36 @@ footer .fine {
     flex-direction: column;
     gap: 10px;
     text-align: center;
+  }
+
+  #pitch,
+  #frames,
+  #poems {
+    margin-top: -20%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .hero-fade-in,
+  #intro-content h1,
+  #intro-content h3,
+  #intro-content p,
+  #intro-image,
+  .intro-scroll-cue {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+  .intro-scroll-cue .line::after {
+    animation: none;
+  }
+  .hobby-panel-canvas,
+  .hobby-panel-text {
+    transition: none;
+    opacity: 1;
+    transform: none;
   }
 }
