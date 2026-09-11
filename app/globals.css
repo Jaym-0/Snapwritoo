@@ -69,6 +69,41 @@ section {
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
 }
 
+/* ============ PAGE LOADER (route transitions) ============ */
+.page-loader {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  background: var(--ink);
+}
+
+.page-loader-ring {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 2px solid var(--paper-line);
+  border-top-color: var(--film-amber);
+  animation: page-loader-spin 0.85s linear infinite;
+}
+
+.page-loader-text {
+  font-family: "Fraunces", serif;
+  font-style: italic;
+  font-size: 1rem;
+  letter-spacing: 0.02em;
+  color: var(--sand);
+  opacity: 0.85;
+}
+
+@keyframes page-loader-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 /* ============ NAV ============ */
 nav {
   position: fixed;
@@ -118,7 +153,7 @@ nav .links a:hover {
   gap: clamp(32px, 6vw, 80px);
   flex-wrap: wrap;
   padding-top: clamp(96px, 12vh, 140px);
-  background: radial-gradient(120% 90% at 70% 20%, #332236 0%, #171712 55%, #100f0d 100%);
+  background: radial-gradient(120% 90% at 70% 20%, #2f1c32 0%, #171712 55%, #100f0d 100%);
 }
 #intro-content {
   max-width: 520px;
@@ -399,6 +434,7 @@ nav .links a:hover {
 /* ============ POEM CARD ============ */
 
 .poem-card {
+  position: relative;
   background: var(--chalk);
   border: 1px solid var(--paper-line);
   padding: 32px 28px;
@@ -408,6 +444,70 @@ nav .links a:hover {
   transition:
     transform 0.25s ease,
     box-shadow 0.25s ease;
+}
+
+/* ============ POEM COPY BUTTON ============ */
+
+.poem-copy-btn {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  z-index: 3;
+
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  padding: 6px 10px;
+  border: 1px solid var(--paper-line);
+  border-radius: 999px;
+  background: var(--paper);
+  color: #6b6552;
+
+  font-family: "Work Sans", sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+
+  opacity: 0;
+  transform: translateY(-2px);
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease,
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.poem-card:hover .poem-copy-btn,
+.poem-copy-btn:focus-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.poem-copy-btn:hover {
+  border-color: var(--film-amber);
+  color: var(--film-amber);
+}
+
+.poem-copy-btn.is-copied {
+  opacity: 1;
+  transform: translateY(0);
+  border-color: var(--outfield);
+  color: var(--outfield);
+  background: var(--chalk);
+}
+
+.poem-copy-btn svg {
+  flex-shrink: 0;
+}
+
+@media (hover: none) {
+  /* No hover on touch devices, so keep the button visible. */
+  .poem-copy-btn {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 /* Every 3 cards gets a slightly different handmade position */
@@ -442,6 +542,7 @@ nav .links a:hover {
   font-size: 1.2rem;
 
   margin-bottom: 16px;
+  padding-right: 78px;
 
   color: var(--seam);
 }
@@ -1055,6 +1156,11 @@ footer .fine {
     transition: none;
     opacity: 1;
     transform: none;
+  }
+
+  .page-loader-ring {
+    animation: none;
+    border-top-color: var(--paper-line);
   }
 }
 

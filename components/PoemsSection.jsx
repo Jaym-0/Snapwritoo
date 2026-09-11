@@ -1,4 +1,5 @@
 import { getPoems } from "@/lib/db";
+import CopyPoemButton from "@/components/CopyPoemButton";
 
 export default async function PoemsSection() {
   const poems = await getPoems();
@@ -13,6 +14,7 @@ export default async function PoemsSection() {
         <div className="poem-grid">
           {poems.map((poem) => (
             <div className="poem-card" key={poem.slug}>
+              <CopyPoemButton title={poem.title} lines={poem.lines} />
               <h3>{poem.title}</h3>
               <p>
                 {poem.lines.map((line, i) => (
