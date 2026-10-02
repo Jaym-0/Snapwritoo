@@ -315,14 +315,11 @@ export default function AdminPage() {
           </h1>
 
           <p className="admin-intro">
-            A quiet control room for poems, photographs, pitch statistics
-            and the stories behind them.
+            Welcome to the private admin studio. Here you can manage poems, photographs, pitch stats and ledger entries.
           </p>
         </div>
-
-        <div className="admin-hero-mark" aria-hidden="true">
-          <span>SW</span>
-          <small>ADMIN</small>
+        <div className="admin-hero-mark">
+          <span></span>
         </div>
       </header>
 
@@ -331,8 +328,7 @@ export default function AdminPage() {
           <p className="admin-eyebrow">/ Access</p>
           <h2>Admin token</h2>
           <p>
-            Your token is stored locally in this browser and sent with
-            protected admin requests.
+            Enter the authentication token to access the admin features. This token is required for all actions in this studio.
           </p>
         </div>
 

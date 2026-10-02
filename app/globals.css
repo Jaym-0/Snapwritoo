@@ -783,7 +783,9 @@ footer .fine {
   align-items: flex-end;
   justify-content: space-between;
   gap: 50px;
+
   padding: 55px 28px;
+
   border-bottom: 1px solid rgba(239, 234, 217, 0.12);
 }
 
@@ -832,23 +834,18 @@ footer .fine {
 #admin-page .admin-hero-mark {
   display: flex;
   flex-direction: column;
-
   align-items: center;
   justify-content: center;
-
   flex-shrink: 0;
-
-  width: 125px;
-  height: 125px;
-
-  border: 1px solid rgba(201, 122, 61, 0.35);
-
-  transform: rotate(-5deg);
+  width: 15px;
+  height: 15px;
+  /* font-family: "Fraunces", serif; */
+  font-weight: 100;
+  /* margin-right: 250px; */
 }
 
 #admin-page .admin-hero-mark span {
-  color: var(--chalk);
-
+  color: var(--film-amber);
   font-size: 2.2rem;
   font-style: italic;
   letter-spacing: -0.08em;
@@ -1707,7 +1704,7 @@ footer .fine {
 
   color: rgba(201, 194, 172, 0.28);
 
-  font-size: 0.55rem;
+  font-size: 20px;
 
   letter-spacing: 0.15em;
 }
